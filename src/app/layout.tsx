@@ -1,4 +1,6 @@
 import Header from '@/components/common/Header/Header';
+
+import QueryProvider from '@/providers/QueryProvider';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.scss';
@@ -27,7 +29,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<Header />
-				{children}
+				<QueryProvider>{children}</QueryProvider>
 			</body>
 		</html>
 	);

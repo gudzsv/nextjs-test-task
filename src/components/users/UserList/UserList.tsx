@@ -1,5 +1,4 @@
 import { User } from '@/types/user';
-import React from 'react';
 import UserCard from '../UserCard/UserCard';
 import styles from './UserList.module.scss';
 
@@ -7,7 +6,7 @@ interface UserListProps {
 	users: User[];
 }
 
-const UserList: React.FC<UserListProps> = ({ users }) => {
+function UserList({ users }: UserListProps) {
 	return (
 		<ul className={styles.list}>
 			{users.map((user) => (
@@ -15,6 +14,6 @@ const UserList: React.FC<UserListProps> = ({ users }) => {
 			))}
 		</ul>
 	);
-};
+}
 
 export default UserList;

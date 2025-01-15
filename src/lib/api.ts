@@ -1,11 +1,14 @@
-import { User } from '../types/user.js';
+import { User } from '../types/user';
 
 const BASE_URL = 'https://jsonplaceholder.org';
 
-const buildUrl = (...path: string[]): string => {
+const buildUrl = (...path: (string | undefined)[]): string => {
 	const cleanPath = path.filter(Boolean).join('/');
 	return `${BASE_URL}/${cleanPath}`;
 };
+
+type RequestError = Error & { response?: string };
+
 const sendRequest = async <T>(url: string, init?: RequestInit): Promise<T> => {
 	try {
 		const res = await fetch(url, {
@@ -21,15 +24,22 @@ const sendRequest = async <T>(url: string, init?: RequestInit): Promise<T> => {
 			throw new Error(errorText || 'Unknown error occurred');
 		}
 
-		return res.json() as Promise<T>;
+		return res.json() as T;
 	} catch (error) {
-		throw error;
+		if (error instanceof Error) {
+			const err = error as RequestError;
+			err.response = err.message;
+			throw err;
+		}
+
+		throw new Error('Unknown error occurred');
 	}
 };
-export const getAllUsers = (): Promise<User[]> => {
+
+export const fetchUsers = (): Promise<User[]> => {
 	return sendRequest<User[]>(buildUrl('users'));
 };
 
-export const getUserById = (id: number): Promise<User> => {
+export const fetchUserById = (id: number): Promise<User> => {
 	return sendRequest<User>(buildUrl('users', id.toString()));
 };
