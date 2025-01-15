@@ -1,0 +1,27 @@
+.card {
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 16px;
+	margin: 8px 0;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.2s ease;
+
+	&:hover {
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+}
+
+.name {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+.email,
+.phone,
+.address,
+.company {
+	font-size: 0.9rem;
+	color: #555;
+	margin: 4px 0;
+}
