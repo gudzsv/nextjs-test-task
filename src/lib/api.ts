@@ -1,5 +1,4 @@
-import { Post } from '@/types/post.js';
-import { User } from '../types/user';
+import { Post, User } from '@/types';
 
 const BASE_URL = 'https://jsonplaceholder.org';
 

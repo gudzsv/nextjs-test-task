@@ -16,7 +16,8 @@ export default function Header() {
 		<header className={styles.header}>
 			<nav className={styles.nav}>
 				<Link href={'/'} className={styles.logo}>
-					{'>> TEST-TASK <<'}
+					<span>{' TEST-TASK '}</span>
+					<span className={styles.decoration}>{'(NextJS)'}</span>
 				</Link>
 				<ul className={styles.navList}>
 					<li className={styles.navItem}>
