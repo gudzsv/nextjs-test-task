@@ -3,7 +3,7 @@ import UserDetails from '@/components/users/UserDetails/UserDetails';
 export interface PageProps {
 	params: { id: string };
 }
-export default async function Page({ params }: PageProps) {
+export default function Page({ params }: PageProps) {
 	const { id } = params;
 
 	if (!id) {
