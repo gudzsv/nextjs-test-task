@@ -4,5 +4,11 @@ export interface PageProps {
 	params: { id: string };
 }
 export default async function Page({ params }: PageProps) {
-	return <UserDetails id={params.id} />;
+	const { id } = await params;
+
+	if (!id) {
+		return <p>Error: Missing user ID</p>;
+	}
+
+	return <UserDetails id={id} />;
 }

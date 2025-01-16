@@ -1,10 +1,14 @@
+@use '../../../styles/_colors.scss' as *;
+
 .card {
-	border: 1px solid #ccc;
+	width: 200px;
+	border: 1px solid $border-color;
 	border-radius: 8px;
 	padding: 16px;
 	margin: 8px 0;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	transition: box-shadow 0.2s ease;
+	text-align: center;
 
 	&:hover {
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -22,6 +26,6 @@
 .address,
 .company {
 	font-size: 0.9rem;
-	color: #555;
+	color: $grey-text;
 	margin: 4px 0;
 }

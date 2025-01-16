@@ -21,6 +21,7 @@ const sendRequest = async <T>(url: string, init?: RequestInit): Promise<T> => {
 
 		if (!res.ok) {
 			const errorText = await res.text();
+
 			throw new Error(errorText || 'Unknown error occurred');
 		}
 

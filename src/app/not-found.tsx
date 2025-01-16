@@ -3,8 +3,8 @@ import Link from 'next/link.js';
 const NotFound = () => {
 	return (
 		<div>
-			<p>User could not found</p>
-			<Link href='/users'>Back to all users</Link>
+			<p>Page Not Found</p>
+			<Link href='/'>Back to home page</Link>
 		</div>
 	);
 };
