@@ -1,3 +1,4 @@
+import { Post } from '@/types/post.js';
 import { User } from '../types/user';
 
 const BASE_URL = 'https://jsonplaceholder.org';
@@ -43,4 +44,8 @@ export const fetchUsers = (): Promise<User[]> => {
 
 export const fetchUserById = (id: number): Promise<User> => {
 	return sendRequest<User>(buildUrl('users', id.toString()));
+};
+
+export const fetchPosts = (): Promise<Post[]> => {
+	return sendRequest<Post[]>(buildUrl('posts'));
 };

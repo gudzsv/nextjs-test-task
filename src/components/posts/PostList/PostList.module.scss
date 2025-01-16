@@ -1,0 +1,21 @@
+@use '.../../../../../styles/_colors.scss' as *;
+
+.postList {
+	padding: 1rem;
+	background-color: $white-hover;
+
+	h1 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		color: $dark-background;
+		text-align: center;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(auto-fit, minmax(950px, 1fr));
+	}
+}
