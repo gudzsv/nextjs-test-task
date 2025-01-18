@@ -12,7 +12,7 @@ export const generateMetadata = ({ params }: PageProps): Metadata => {
 	};
 };
 
-export default function Page({ params }: UserPageProps) {
+export default function Page({ params }: PageProps) {
 	if (!params.id) {
 		return <p>Error: Missing user ID</p>;
 	}
