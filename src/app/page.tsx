@@ -1,3 +1,12 @@
+import { Metadata } from 'next';
+
+export const generateMetadata = (): Metadata => {
+	return {
+		title: `Home Page`,
+		description: `Home Page`,
+	};
+};
+
 export default function Page() {
 	return (
 		<div style={{ textAlign: 'center', marginTop: '40px' }}>
