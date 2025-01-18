@@ -1,11 +1,11 @@
 import UserDetails from '@/components/users/UserDetails/UserDetails';
 import { Metadata } from 'next';
 
-export interface UserPageProps {
+export interface PageProps {
 	params: { id: string };
 }
 
-export const generateMetadata = ({ params }: UserPageProps): Metadata => {
+export const generateMetadata = ({ params }: PageProps): Metadata => {
 	return {
 		title: `User ${params.id}`,
 		description: `This is the profile page for user with ID ${params.id}`,
